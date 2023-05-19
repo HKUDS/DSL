@@ -1,6 +1,6 @@
-# Denoised Self-Augmented Learning for Social Recommendation (DSAL)
+# Denoised Self-Augmented Learning for Social Recommendation (DSL)
 
-This is the PyTorch-based implementation for DSAL model proposed in this paper:
+This is the PyTorch-based implementation for DSL model proposed in this paper:
 
 > Denoised Self-Augmented Learning for Social Recommendation
 
@@ -8,13 +8,13 @@ This is the PyTorch-based implementation for DSAL model proposed in this paper:
 
 ## Abstract
 
-Social recommendation has been increasingly investigated in a broad spectrum of online applications (e.g., e-commerce, online streaming) to leverage social information for help user-item interaction modeling. Recently, Self-Supervised Learning (SSL) has been outstandingly successful in alleviating data sparsity with the augmented learning tasks. Inspired by this, recent attempts bring the benefits of SSL into social recommendation by supplementing the main supervised task with social-aware self-supervised signals. However, social information is unavoidably noisy for characterizing user preference, due to the ubiquitous presence of interest-irrelevant social connections, e.g., colleagues or classmates who do not share many common interests. To rectify this, we propose a new social recommender with a <u>D</u>enoised Cross-view <u>S</u>elf-<u>A</u>ugmented <u>L</u>earning paradigm (DSAL). It not only preserves the helpful social relations for enhancing user-item interaction modeling, but also allows the personalized cross-view knowledge transfer with adaptive semantic alignment in embedding space. Experimental results on various recommendation benchmarks verify the advantages of our DSAL over state-of-the-art methods.
+Social recommendation is gaining increasing attention in various online applications, including e-commerce and online streaming, where social information is leveraged to improve user-item interaction modeling. Recently, Self-Supervised Learning (SSL) has proven to be remarkably effective in addressing data sparsity through augmented learning tasks. Inspired by this, researchers have attempted to incorporate SSL into social recommendation by supplementing the primary supervised task with social-aware self-supervised signals. However, social information can be unavoidably noisy in characterizing user preferences due to the ubiquitous presence of interest-irrelevant social connections, such as colleagues or classmates who do not share many common interests. To address this challenge, we propose a novel social recommender called the Denoised Self-Augmented Learning paradigm (DSL). Our model not only preserves helpful social relations to enhance user-item interaction modeling but also enables personalized cross-view knowledge transfer through adaptive semantic alignment in embedding space. Our experimental results on various recommendation benchmarks confirm the superiority of our DSL over state-of-the-art methods.
 
 
 
 ## Environment
 
-The implementation for DSAL is under the following development environment:
+The implementation for DSL is under the following development environment:
 
 - python=3.8
 - torch=1.12.1
@@ -37,7 +37,7 @@ Our experiments are conducted on three benchmark datasets collected from Ciao, E
 
 ## Usage
 
-Please unzip the datasets first. Also you need to create the `History/` and the `Models/` directories. The command lines to train DSAL on the three datasets are as below. The un-specified hyperparameters in the commands are set as default.
+Please unzip the datasets first. Also you need to create the `History/` and the `Models/` directories. The command lines to train DSL on the three datasets are as below. The un-specified hyperparameters in the commands are set as default.
 
 - Ciao
 
@@ -62,6 +62,6 @@ Please unzip the datasets first. Also you need to create the `History/` and the 
 ### Important Arguments
 
 - `gnn_layer`: It is the number of gnn layers, which is searched from `{1, 2, 3, 4}`.
-- `reg`: It is the weight for weight-decay regularization. We tune this hyperparameter from the set `{1e-3, 1e-4, 1e-5, 1e-6, 1e-7}`.
+- `reg`: It is the weight for weight-decay regularization. We tune this hyperparameter from the set `{1e-4, 1e-5, 1e-6, 1e-7}`.
 - `uuPre_reg`: It is the weight for social graph prediction regularization, which is tuned from `{1e1, 1e0, 1e-1, 1e-2, 1e-3}`
-- `sal_reg`: It is the weight for self-augmented regularization. We tune it from the set `{1e-3, 1e-4, 1e-5, 1e-6, 1e-7}`
+- `sal_reg`: It is the weight for self-augmented regularization. We tune it from the set `{1e-4, 1e-5, 1e-6}`
