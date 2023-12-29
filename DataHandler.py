@@ -23,9 +23,9 @@ class DataHandler():
 		elif args.data == 'Epinions':
 			predir = 'Data/Epinions/'
 		self.predir = predir
-		self.trnfile = predir + 'train.csv'
-		self.tstfile = predir + 'test_Data.csv'
-		self.uufile = predir + 'trust.csv'
+		self.trnfile = predir + 'train.pkl'
+		self.tstfile = predir + 'test_Data.pkl'
+		self.uufile = predir + 'trust.pkl'
 	
 	def normalizeAdj(self, mat):
 		"""Create symmetrically normalized Laplacian matrix.
