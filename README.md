@@ -1,5 +1,7 @@
 # Denoised Self-Augmented Learning for Social Recommendation (DSL)
 
+[Tianle Wang](https://louiswng.github.io), [Lianghao Xia](https://akaxlh.github.io), [Chao Huang](https://sites.google.com/view/chaoh/home)*. (*Correspondence)
+
 This is the PyTorch-based implementation for DSL model proposed in this paper:
 
 > Denoised Self-Augmented Learning for Social Recommendation
@@ -65,3 +67,22 @@ Please unzip the datasets first. Also you need to create the `History/` and the 
 - `reg`: It is the weight for weight-decay regularization. We tune this hyperparameter from the set `{1e-4, 1e-5, 1e-6, 1e-7}`.
 - `uuPre_reg`: It is the weight for social graph prediction regularization, which is tuned from `{1e1, 1e0, 1e-1, 1e-2, 1e-3}`
 - `sal_reg`: It is the weight for self-augmented regularization. We tune it from the set `{1e-4, 1e-5, 1e-6}`
+
+
+
+## Contact
+
+For any question or feedback, feel free to contact [Tianle Wang](mailto:louiswong.cs@connect.hku.hk).
+
+## Citation
+
+If you find DSL useful in your research or applications, please kindly cite:
+
+```tex
+@article{wang2023denoised,
+  title={Denoised Self-Augmented Learning for Social Recommendation},
+  author={Wang, Tianle and Xia, Lianghao and Huang, Chao},
+  journal={arXiv preprint arXiv:2305.12685},
+  year={2023}
+}
+```
