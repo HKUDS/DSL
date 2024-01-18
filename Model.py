@@ -9,13 +9,13 @@ xavierInit = nn.init.xavier_uniform_
 zeroInit = lambda x: nn.init.constant_(x, 0.0)
 normalInit = lambda x: nn.init.normal_(x, 0.0, 0.3)
 
-class DSAL(nn.Module):
+class DSL(nn.Module):
     def __init__(self):
-        super(DSAL, self).__init__()
+        super(DSL, self).__init__()
         self.uEmbeds0 = nn.Parameter(xavierInit(t.empty(args.user, args.latdim)))
         self.iEmbeds0 = nn.Parameter(xavierInit(t.empty(args.item, args.latdim)))
-        self.LightGCN = LightGCN(self.uEmbeds0, self.iEmbeds0).to(device)
-        self.LightGCN2 = LightGCN2(self.uEmbeds0).to(device)
+        self.LightGCN = LightGCN(self.uEmbeds0, self.iEmbeds0)
+        self.LightGCN2 = LightGCN2(self.uEmbeds0)
         self.linear1 = nn.Linear(2*args.latdim, args.latdim)
         self.linear2 = nn.Linear(args.latdim, 1)
         self.dropout = nn.Dropout(args.dropRate)

@@ -2,14 +2,14 @@ from Params import args
 import os
 os.environ['CUDA_VISIBLE_DEVICES'] = args.gpu
 from setproctitle import setproctitle
-setproctitle("EXP@DSAL")
+setproctitle("EXP@DSL")
 import torch as t
 from torch.utils.tensorboard import SummaryWriter
 import random
 import numpy as np
 import pickle
 from DataHandler import DataHandler
-from Model import DSAL
+from Model import DSL
 import Utils.TimeLogger as logger
 from Utils.TimeLogger import log
 from Utils.utils import early_stopping
@@ -86,7 +86,7 @@ class Recommender():
         self.saveHistory()
 
     def preperaModel(self):
-        self.model = DSAL().to(device)
+        self.model = DSL().to(device)
         self.opt = t.optim.Adam(self.model.parameters(), lr=args.lr)
         self.sche = t.optim.lr_scheduler.ExponentialLR(self.opt, gamma=args.decay)
 
