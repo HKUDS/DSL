@@ -72,7 +72,7 @@ Please unzip the datasets first. Also you need to create the `History/` and the 
 
 ## Contact
 
-For any question or feedback, feel free to contact [Tianle Wang](mailto:louiswong.cs@connect.hku.hk).
+For any question or feedback, feel free to contact [Tianle Wang](mailto:louis.wng@outlook.com).
 
 ## Citation
 
